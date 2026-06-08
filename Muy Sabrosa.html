@@ -6,50 +6,20 @@
 <title>Muy Sabrosa Cafe</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#111;
-color:white;
-overflow-x:hidden;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#111;color:#fff}
 header{
-position:fixed;
-top:0;
-width:100%;
-background:rgba(0,0,0,0.9);
-padding:15px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:1000;
+position:fixed;top:0;width:100%;
+background:#000;padding:15px 20px;
+display:flex;justify-content:space-between;
+z-index:1000
 }
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#ffb347;
-animation:bounce 2s infinite;
-}
-
+.logo{color:#ffb347;font-size:28px;font-weight:bold}
 nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-transition:.3s;
+color:white;text-decoration:none;
+margin-left:15px
 }
-
-nav a:hover{
-color:#ffb347;
-}
-
 .hero{
 height:100vh;
 display:flex;
@@ -57,185 +27,93 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200");
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200');
 background-size:cover;
 background-position:center;
 }
-
-.hero h1{
-font-size:60px;
-animation:fadeUp 1s ease;
-}
-
-.hero p{
-margin-top:15px;
-font-size:20px;
-max-width:700px;
-animation:fadeUp 1.5s ease;
-}
-
+.hero h1{font-size:55px}
+.hero p{margin-top:15px}
 .btn{
-margin-top:25px;
-padding:14px 28px;
-background:#ffb347;
-color:black;
+margin-top:20px;
+padding:12px 25px;
 border:none;
 border-radius:30px;
+background:#ffb347;
 font-weight:bold;
-cursor:pointer;
-transition:.3s;
+cursor:pointer
 }
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-section{
-padding:100px 10%;
-}
-
-.section-title{
+section{padding:90px 10%}
+h2{
 text-align:center;
-font-size:40px;
-margin-bottom:50px;
-color:#ffb347;
+margin-bottom:30px;
+color:#ffb347
 }
-
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about img{
-width:100%;
-border-radius:20px;
-}
-
-.card-grid{
+.cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px
 }
-
 .card{
-background:#1b1b1b;
-padding:25px;
-border-radius:20px;
-transition:.4s;
+background:#1c1c1c;
+padding:20px;
+border-radius:15px
 }
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card h3{
-color:#ffb347;
-margin-bottom:10px;
-}
-
 #adContainer{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px
 }
-
-.ad-card{
-background:#1b1b1b;
+.ad{
+background:#1c1c1c;
 padding:15px;
-border-radius:15px;
+border-radius:15px
 }
-
-.ad-card img{
+.ad img{
 width:100%;
-border-radius:10px;
-margin-bottom:10px;
+border-radius:10px
 }
-
-.contact{
-text-align:center;
-}
-
+.contact{text-align:center}
 footer{
-padding:25px;
-text-align:center;
-background:black;
+background:#000;
+padding:20px;
+text-align:center
 }
-
-.owner-btn{
+.plus{
 position:fixed;
 bottom:20px;
 right:20px;
-width:55px;
-height:55px;
+width:60px;
+height:60px;
 border:none;
 border-radius:50%;
+font-size:30px;
 background:#ffb347;
-font-size:22px;
-cursor:pointer;
+cursor:pointer
 }
-
-.admin-panel{
+.panel{
 display:none;
 position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 background:#222;
-padding:25px;
-border-radius:20px;
+padding:20px;
+border-radius:15px;
 width:90%;
-max-width:450px;
-z-index:9999;
+max-width:400px
 }
-
-.admin-panel input,
-.admin-panel textarea{
+.panel input,.panel textarea{
 width:100%;
 padding:10px;
 margin:8px 0;
 border:none;
-border-radius:10px;
+border-radius:10px
 }
-
-.admin-panel button{
-padding:10px;
-margin-top:10px;
-background:#ffb347;
-border:none;
-cursor:pointer;
+.panel button{
 width:100%;
-border-radius:10px;
-}
-
-@keyframes bounce{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-5px)}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:40px;
-}
-
-.about{
-grid-template-columns:1fr;
-}
+padding:10px;
+margin-top:8px
 }
 </style>
 </head>
@@ -244,160 +122,112 @@ grid-template-columns:1fr;
 
 <header>
 <div class="logo">Muy Sabrosa</div>
-
 <nav>
 <a href="#about">About</a>
 <a href="#menu">Menu</a>
-<a href="#ads">Offers</a>
+<a href="#offers">Offers</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
 <h1>Muy Sabrosa Cafe</h1>
-<p>Where every cup, every bite, and every moment is crafted with passion.</p>
-<a href="#menu"><button class="btn">Explore Menu</button></a>
+<p>Fresh Coffee • Great Food • Good Moments</p>
+<a href="#about"><button class="btn">Explore</button></a>
 </section>
 
 <section id="about">
-<h2 class="section-title">About Us</h2>
-
-<div class="about">
-<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000">
-
-<div>
-<h3>Welcome to Muy Sabrosa</h3>
-<br>
-<p>
-Owned by Moumita Biswas, Muy Sabrosa Cafe is designed to offer
-a warm atmosphere, delicious beverages, fresh food,
-and a memorable experience for every guest.
+<h2>About Us</h2>
+<p style="text-align:center;max-width:700px;margin:auto">
+Muy Sabrosa Cafe, owned by Moumita Biswas, is a welcoming place
+for coffee lovers, food enthusiasts and friends looking to relax.
 </p>
-</div>
-</div>
 </section>
 
 <section id="menu">
-<h2 class="section-title">Menu Highlights</h2>
-
-<div class="card-grid">
-
+<h2>Menu Highlights</h2>
+<div class="cards">
 <div class="card">
 <h3>Premium Coffee</h3>
-<p>Freshly brewed coffee made from quality beans.</p>
+<p>Freshly brewed coffee.</p>
 </div>
 
 <div class="card">
 <h3>Cold Beverages</h3>
-<p>Refreshing shakes, coolers and signature drinks.</p>
+<p>Cool shakes and refreshing drinks.</p>
 </div>
 
 <div class="card">
 <h3>Snacks & Desserts</h3>
-<p>Delicious treats prepared for every craving.</p>
+<p>Tasty treats for every craving.</p>
 </div>
-
 </div>
 </section>
 
-<section id="ads">
-<h2 class="section-title">Latest Offers</h2>
-
+<section id="offers">
+<h2>Latest Offers</h2>
 <div id="adContainer"></div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Contact</h2>
-
+<h2>Contact</h2>
 <div class="contact">
-<h3>Phone</h3>
-<p>+91 8910854204</p>
-
-<br>
-
-<h3>Visit Us</h3>
-<p>Address Coming Soon</p>
+<p><b>Phone:</b> +91 8910854204</p>
 </div>
 </section>
 
 <footer>
-© 2026 Muy Sabrosa Cafe. All Rights Reserved.
+© 2026 Muy Sabrosa Cafe
 </footer>
 
-<button class="owner-btn" onclick="openAdmin()">+</button>
+<button class="plus" onclick="login()">+</button>
 
-<div class="admin-panel" id="adminPanel">
-<h2>Add Advertisement</h2>
-
-<input type="text" id="imgUrl" placeholder="Image URL">
-
-<textarea id="desc" placeholder="Description"></textarea>
-
-<button onclick="addAd()">Publish Ad</button>
-
-<button onclick="closeAdmin()">Close</button>
+<div class="panel" id="panel">
+<h3>Add Offer</h3>
+<input id="img" placeholder="Image URL">
+<textarea id="txt" placeholder="Offer Description"></textarea>
+<button onclick="addOffer()">Publish</button>
+<button onclick="closePanel()">Close</button>
 </div>
 
 <script>
+const password="MuySabrosa2026";
 
-const OWNER_PASSWORD = "MuySabrosa2026";
-
-function openAdmin(){
-
-const pass = prompt("Owner Password");
-
-if(pass === OWNER_PASSWORD){
-document.getElementById("adminPanel").style.display="block";
-}
-else{
+function login(){
+let p=prompt("Owner Password");
+if(p===password){
+document.getElementById("panel").style.display="block";
+}else{
 alert("Access Denied");
 }
 }
 
-function closeAdmin(){
-document.getElementById("adminPanel").style.display="none";
+function closePanel(){
+document.getElementById("panel").style.display="none";
 }
 
-function addAd(){
+function addOffer(){
+let img=document.getElementById("img").value;
+let txt=document.getElementById("txt").value;
 
-let img=document.getElementById("imgUrl").value;
-let desc=document.getElementById("desc").value;
-
-if(!img || !desc){
+if(!img||!txt){
 alert("Fill all fields");
 return;
 }
 
-let card=document.createElement("div");
-card.className="ad-card";
+let div=document.createElement("div");
+div.className="ad";
+div.innerHTML=
+`<img src="${img}">
+<p>${txt}</p>`;
 
-card.innerHTML=
-`
-<img src="${img}">
-<p>${desc}</p>
-`;
+document.getElementById("adContainer").prepend(div);
 
-document.getElementById("adContainer").prepend(card);
+document.getElementById("img").value="";
+document.getElementById("txt").value="";
 
-document.getElementById("imgUrl").value="";
-document.getElementById("desc").value="";
-
-alert("Advertisement Published");
+alert("Offer Published");
 }
-
-window.addEventListener("scroll",()=>{
-
-document.querySelectorAll(".card").forEach(card=>{
-
-const top=card.getBoundingClientRect().top;
-
-if(top < window.innerHeight-100){
-card.style.opacity=1;
-card.style.transform="translateY(0)";
-}
-});
-});
-
 </script>
 
 </body>
