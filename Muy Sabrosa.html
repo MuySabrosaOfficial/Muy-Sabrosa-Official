@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muy Sabrosa Cafe</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#111;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#ffb347;
+animation:bounce 2s infinite;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffb347;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:60px;
+animation:fadeUp 1s ease;
+}
+
+.hero p{
+margin-top:15px;
+font-size:20px;
+max-width:700px;
+animation:fadeUp 1.5s ease;
+}
+
+.btn{
+margin-top:25px;
+padding:14px 28px;
+background:#ffb347;
+color:black;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#ffb347;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1b1b1b;
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+color:#ffb347;
+margin-bottom:10px;
+}
+
+#adContainer{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.ad-card{
+background:#1b1b1b;
+padding:15px;
+border-radius:15px;
+}
+
+.ad-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+padding:25px;
+text-align:center;
+background:black;
+}
+
+.owner-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#ffb347;
+font-size:22px;
+cursor:pointer;
+}
+
+.admin-panel{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#222;
+padding:25px;
+border-radius:20px;
+width:90%;
+max-width:450px;
+z-index:9999;
+}
+
+.admin-panel input,
+.admin-panel textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:10px;
+}
+
+.admin-panel button{
+padding:10px;
+margin-top:10px;
+background:#ffb347;
+border:none;
+cursor:pointer;
+width:100%;
+border-radius:10px;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-5px)}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:40px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Muy Sabrosa</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#ads">Offers</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Muy Sabrosa Cafe</h1>
+<p>Where every cup, every bite, and every moment is crafted with passion.</p>
+<a href="#menu"><button class="btn">Explore Menu</button></a>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000">
+
+<div>
+<h3>Welcome to Muy Sabrosa</h3>
+<br>
+<p>
+Owned by Moumita Biswas, Muy Sabrosa Cafe is designed to offer
+a warm atmosphere, delicious beverages, fresh food,
+and a memorable experience for every guest.
+</p>
+</div>
+</div>
+</section>
+
+<section id="menu">
+<h2 class="section-title">Menu Highlights</h2>
+
+<div class="card-grid">
+
+<div class="card">
+<h3>Premium Coffee</h3>
+<p>Freshly brewed coffee made from quality beans.</p>
+</div>
+
+<div class="card">
+<h3>Cold Beverages</h3>
+<p>Refreshing shakes, coolers and signature drinks.</p>
+</div>
+
+<div class="card">
+<h3>Snacks & Desserts</h3>
+<p>Delicious treats prepared for every craving.</p>
+</div>
+
+</div>
+</section>
+
+<section id="ads">
+<h2 class="section-title">Latest Offers</h2>
+
+<div id="adContainer"></div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+<h3>Phone</h3>
+<p>+91 8910854204</p>
+
+<br>
+
+<h3>Visit Us</h3>
+<p>Address Coming Soon</p>
+</div>
+</section>
+
+<footer>
+© 2026 Muy Sabrosa Cafe. All Rights Reserved.
+</footer>
+
+<button class="owner-btn" onclick="openAdmin()">+</button>
+
+<div class="admin-panel" id="adminPanel">
+<h2>Add Advertisement</h2>
+
+<input type="text" id="imgUrl" placeholder="Image URL">
+
+<textarea id="desc" placeholder="Description"></textarea>
+
+<button onclick="addAd()">Publish Ad</button>
+
+<button onclick="closeAdmin()">Close</button>
+</div>
+
+<script>
+
+const OWNER_PASSWORD = "MuySabrosa2026";
+
+function openAdmin(){
+
+const pass = prompt("Owner Password");
+
+if(pass === OWNER_PASSWORD){
+document.getElementById("adminPanel").style.display="block";
+}
+else{
+alert("Access Denied");
+}
+}
+
+function closeAdmin(){
+document.getElementById("adminPanel").style.display="none";
+}
+
+function addAd(){
+
+let img=document.getElementById("imgUrl").value;
+let desc=document.getElementById("desc").value;
+
+if(!img || !desc){
+alert("Fill all fields");
+return;
+}
+
+let card=document.createElement("div");
+card.className="ad-card";
+
+card.innerHTML=
+`
+<img src="${img}">
+<p>${desc}</p>
+`;
+
+document.getElementById("adContainer").prepend(card);
+
+document.getElementById("imgUrl").value="";
+document.getElementById("desc").value="";
+
+alert("Advertisement Published");
+}
+
+window.addEventListener("scroll",()=>{
+
+document.querySelectorAll(".card").forEach(card=>{
+
+const top=card.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+card.style.opacity=1;
+card.style.transform="translateY(0)";
+}
+});
+});
+
+</script>
+
+</body>
+</html>
